@@ -56,6 +56,7 @@
             this.buttonHit.TabIndex = 0;
             this.buttonHit.Text = "Hit";
             this.buttonHit.UseVisualStyleBackColor = true;
+            this.buttonHit.Click += new System.EventHandler(this.buttonHit_Click);
             // 
             // buttonStand
             // 
@@ -65,6 +66,7 @@
             this.buttonStand.TabIndex = 1;
             this.buttonStand.Text = "Stand";
             this.buttonStand.UseVisualStyleBackColor = true;
+            this.buttonStand.Click += new System.EventHandler(this.buttonStand_Click);
             // 
             // buttonStart
             // 
@@ -74,6 +76,7 @@
             this.buttonStart.TabIndex = 2;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // pictureBoxDeck
             // 
@@ -97,9 +100,9 @@
             this.labelDrawnCardPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDrawnCardPlayer.Location = new System.Drawing.Point(191, 213);
             this.labelDrawnCardPlayer.Name = "labelDrawnCardPlayer";
-            this.labelDrawnCardPlayer.Size = new System.Drawing.Size(135, 16);
+            this.labelDrawnCardPlayer.Size = new System.Drawing.Size(168, 16);
             this.labelDrawnCardPlayer.TabIndex = 5;
-            this.labelDrawnCardPlayer.Text = "You drew six of clubs.";
+            this.labelDrawnCardPlayer.Text = "You were dealt six of clubs.";
             // 
             // labelPlayerScoreText
             // 
@@ -128,9 +131,9 @@
             this.labelResultPlayer.ForeColor = System.Drawing.Color.Red;
             this.labelResultPlayer.Location = new System.Drawing.Point(191, 238);
             this.labelResultPlayer.Name = "labelResultPlayer";
-            this.labelResultPlayer.Size = new System.Drawing.Size(154, 16);
+            this.labelResultPlayer.Size = new System.Drawing.Size(144, 16);
             this.labelResultPlayer.TabIndex = 8;
-            this.labelResultPlayer.Text = "You lost by overdrawing!";
+            this.labelResultPlayer.Text = "You lost by going over!";
             // 
             // buttonContinue
             // 
@@ -140,6 +143,7 @@
             this.buttonContinue.TabIndex = 9;
             this.buttonContinue.Text = "Continue";
             this.buttonContinue.UseVisualStyleBackColor = true;
+            this.buttonContinue.Click += new System.EventHandler(this.buttonContinue_Click);
             // 
             // labelPlayerScore
             // 
