@@ -30,21 +30,25 @@
         {
             this.buttonHit = new System.Windows.Forms.Button();
             this.buttonStand = new System.Windows.Forms.Button();
-            this.buttonStart = new System.Windows.Forms.Button();
-            this.pictureBoxDeck = new System.Windows.Forms.PictureBox();
-            this.pictureBoxNewCard = new System.Windows.Forms.PictureBox();
             this.labelDrawnCardPlayer = new System.Windows.Forms.Label();
             this.labelPlayerScoreText = new System.Windows.Forms.Label();
             this.labelDealerScoreText = new System.Windows.Forms.Label();
             this.labelResultPlayer = new System.Windows.Forms.Label();
-            this.buttonContinue = new System.Windows.Forms.Button();
             this.labelPlayerScore = new System.Windows.Forms.Label();
             this.labelDealerScore = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelDrawnCardDealer = new System.Windows.Forms.Label();
             this.labelResultDealer = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeck)).BeginInit();
+            this.buttonStart = new System.Windows.Forms.Button();
+            this.labelInitialDraws = new System.Windows.Forms.Label();
+            this.buttonContinue = new System.Windows.Forms.Button();
+            this.labelTest = new System.Windows.Forms.Label();
+            this.labelWinsText = new System.Windows.Forms.Label();
+            this.labelLossesText = new System.Windows.Forms.Label();
+            this.labelLosses = new System.Windows.Forms.Label();
+            this.labelWins = new System.Windows.Forms.Label();
+            this.pictureBoxNewCard = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewCard)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +58,7 @@
             this.buttonHit.Name = "buttonHit";
             this.buttonHit.Size = new System.Drawing.Size(148, 98);
             this.buttonHit.TabIndex = 0;
+            this.buttonHit.Tag = "deck";
             this.buttonHit.Text = "Hit";
             this.buttonHit.UseVisualStyleBackColor = true;
             this.buttonHit.Click += new System.EventHandler(this.buttonHit_Click);
@@ -67,32 +72,6 @@
             this.buttonStand.Text = "Stand";
             this.buttonStand.UseVisualStyleBackColor = true;
             this.buttonStand.Click += new System.EventHandler(this.buttonStand_Click);
-            // 
-            // buttonStart
-            // 
-            this.buttonStart.Location = new System.Drawing.Point(195, 516);
-            this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(263, 50);
-            this.buttonStart.TabIndex = 2;
-            this.buttonStart.Text = "Start";
-            this.buttonStart.UseVisualStyleBackColor = true;
-            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
-            // 
-            // pictureBoxDeck
-            // 
-            this.pictureBoxDeck.Location = new System.Drawing.Point(12, 3);
-            this.pictureBoxDeck.Name = "pictureBoxDeck";
-            this.pictureBoxDeck.Size = new System.Drawing.Size(173, 87);
-            this.pictureBoxDeck.TabIndex = 3;
-            this.pictureBoxDeck.TabStop = false;
-            // 
-            // pictureBoxNewCard
-            // 
-            this.pictureBoxNewCard.Location = new System.Drawing.Point(12, 213);
-            this.pictureBoxNewCard.Name = "pictureBoxNewCard";
-            this.pictureBoxNewCard.Size = new System.Drawing.Size(173, 288);
-            this.pictureBoxNewCard.TabIndex = 4;
-            this.pictureBoxNewCard.TabStop = false;
             // 
             // labelDrawnCardPlayer
             // 
@@ -134,16 +113,6 @@
             this.labelResultPlayer.Size = new System.Drawing.Size(144, 16);
             this.labelResultPlayer.TabIndex = 8;
             this.labelResultPlayer.Text = "You lost by going over!";
-            // 
-            // buttonContinue
-            // 
-            this.buttonContinue.Location = new System.Drawing.Point(195, 448);
-            this.buttonContinue.Name = "buttonContinue";
-            this.buttonContinue.Size = new System.Drawing.Size(263, 52);
-            this.buttonContinue.TabIndex = 9;
-            this.buttonContinue.Text = "Continue";
-            this.buttonContinue.UseVisualStyleBackColor = true;
-            this.buttonContinue.Click += new System.EventHandler(this.buttonContinue_Click);
             // 
             // labelPlayerScore
             // 
@@ -204,30 +173,121 @@
             this.labelResultDealer.TabIndex = 15;
             this.labelResultDealer.Text = "The dealer stood at 17.";
             // 
+            // buttonStart
+            // 
+            this.buttonStart.Location = new System.Drawing.Point(273, 451);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(148, 98);
+            this.buttonStart.TabIndex = 16;
+            this.buttonStart.Text = "Start";
+            this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
+            // 
+            // labelInitialDraws
+            // 
+            this.labelInitialDraws.AutoSize = true;
+            this.labelInitialDraws.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInitialDraws.Location = new System.Drawing.Point(191, 127);
+            this.labelInitialDraws.Name = "labelInitialDraws";
+            this.labelInitialDraws.Size = new System.Drawing.Size(0, 16);
+            this.labelInitialDraws.TabIndex = 17;
+            // 
+            // buttonContinue
+            // 
+            this.buttonContinue.Location = new System.Drawing.Point(506, 451);
+            this.buttonContinue.Name = "buttonContinue";
+            this.buttonContinue.Size = new System.Drawing.Size(148, 98);
+            this.buttonContinue.TabIndex = 18;
+            this.buttonContinue.Text = "Continue";
+            this.buttonContinue.UseVisualStyleBackColor = true;
+            this.buttonContinue.Click += new System.EventHandler(this.buttonContinue_Click_1);
+            // 
+            // labelTest
+            // 
+            this.labelTest.AutoSize = true;
+            this.labelTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTest.Location = new System.Drawing.Point(23, 508);
+            this.labelTest.Name = "labelTest";
+            this.labelTest.Size = new System.Drawing.Size(0, 16);
+            this.labelTest.TabIndex = 19;
+            // 
+            // labelWinsText
+            // 
+            this.labelWinsText.AutoSize = true;
+            this.labelWinsText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWinsText.Location = new System.Drawing.Point(418, 9);
+            this.labelWinsText.Name = "labelWinsText";
+            this.labelWinsText.Size = new System.Drawing.Size(41, 16);
+            this.labelWinsText.TabIndex = 20;
+            this.labelWinsText.Text = "Wins:";
+            // 
+            // labelLossesText
+            // 
+            this.labelLossesText.AutoSize = true;
+            this.labelLossesText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLossesText.Location = new System.Drawing.Point(418, 35);
+            this.labelLossesText.Name = "labelLossesText";
+            this.labelLossesText.Size = new System.Drawing.Size(55, 16);
+            this.labelLossesText.TabIndex = 21;
+            this.labelLossesText.Text = "Losses:";
+            // 
+            // labelLosses
+            // 
+            this.labelLosses.AutoSize = true;
+            this.labelLosses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLosses.Location = new System.Drawing.Point(479, 35);
+            this.labelLosses.Name = "labelLosses";
+            this.labelLosses.Size = new System.Drawing.Size(15, 16);
+            this.labelLosses.TabIndex = 22;
+            this.labelLosses.Text = "0";
+            // 
+            // labelWins
+            // 
+            this.labelWins.AutoSize = true;
+            this.labelWins.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWins.Location = new System.Drawing.Point(479, 9);
+            this.labelWins.Name = "labelWins";
+            this.labelWins.Size = new System.Drawing.Size(15, 16);
+            this.labelWins.TabIndex = 23;
+            this.labelWins.Text = "0";
+            // 
+            // pictureBoxNewCard
+            // 
+            this.pictureBoxNewCard.Location = new System.Drawing.Point(12, 177);
+            this.pictureBoxNewCard.Name = "pictureBoxNewCard";
+            this.pictureBoxNewCard.Size = new System.Drawing.Size(179, 307);
+            this.pictureBoxNewCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxNewCard.TabIndex = 4;
+            this.pictureBoxNewCard.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 578);
+            this.Controls.Add(this.labelWins);
+            this.Controls.Add(this.labelLosses);
+            this.Controls.Add(this.labelLossesText);
+            this.Controls.Add(this.labelWinsText);
+            this.Controls.Add(this.labelTest);
+            this.Controls.Add(this.buttonContinue);
+            this.Controls.Add(this.labelInitialDraws);
+            this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.labelResultDealer);
             this.Controls.Add(this.labelDrawnCardDealer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.labelDealerScore);
             this.Controls.Add(this.labelPlayerScore);
-            this.Controls.Add(this.buttonContinue);
             this.Controls.Add(this.labelResultPlayer);
             this.Controls.Add(this.labelDealerScoreText);
             this.Controls.Add(this.labelPlayerScoreText);
             this.Controls.Add(this.labelDrawnCardPlayer);
             this.Controls.Add(this.pictureBoxNewCard);
-            this.Controls.Add(this.pictureBoxDeck);
-            this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.buttonStand);
             this.Controls.Add(this.buttonHit);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewCard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -238,20 +298,25 @@
 
         private System.Windows.Forms.Button buttonHit;
         private System.Windows.Forms.Button buttonStand;
-        private System.Windows.Forms.Button buttonStart;
-        private System.Windows.Forms.PictureBox pictureBoxDeck;
         private System.Windows.Forms.PictureBox pictureBoxNewCard;
         private System.Windows.Forms.Label labelDrawnCardPlayer;
         private System.Windows.Forms.Label labelPlayerScoreText;
         private System.Windows.Forms.Label labelDealerScoreText;
         private System.Windows.Forms.Label labelResultPlayer;
-        private System.Windows.Forms.Button buttonContinue;
         private System.Windows.Forms.Label labelPlayerScore;
         private System.Windows.Forms.Label labelDealerScore;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelDrawnCardDealer;
         private System.Windows.Forms.Label labelResultDealer;
+        private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.Label labelInitialDraws;
+        private System.Windows.Forms.Button buttonContinue;
+        private System.Windows.Forms.Label labelTest;
+        private System.Windows.Forms.Label labelWinsText;
+        private System.Windows.Forms.Label labelLossesText;
+        private System.Windows.Forms.Label labelLosses;
+        private System.Windows.Forms.Label labelWins;
     }
 }
 
