@@ -317,6 +317,7 @@ namespace BlackjackGUI//by Justin Carpenter
                 {
                     deck = currentdeck;
                 }
+                dealer.stood = false;
                 ClearText();
                 deck.Shuffle();
                 InitialDraws(player, dealer, deck);
@@ -344,7 +345,6 @@ namespace BlackjackGUI//by Justin Carpenter
             labelInitialDraws.Text = $"The dealer dealt himself {firstDealerCard.value} of {firstDealerCard.suit} and {secondDealerCard.value} of {secondDealerCard.suit}. \nYou were dealt " +
                 $"{firstPlayerCard.value} of {firstPlayerCard.suit} and {secondPlayerCard.value} of {secondPlayerCard.suit}.";
         }
-
     }
     public class Card
     {
